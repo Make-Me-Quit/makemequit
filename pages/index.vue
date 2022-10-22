@@ -1,83 +1,46 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <v-card class="logo py-4 d-flex justify-center">
-        <NuxtLogo />
-        <VuetifyLogo />
-      </v-card>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
+  <v-row class="row">
+      <v-col align-self="" class="left-col" cols="8">
+        <p class="tagline">{{tagline}}</p>
+        <p class="description">{{description}}</p>
+        <v-btn class="join-button" color="#96FBC4" to="/join">{{join}}</v-btn>
+        <v-btn class="nav-button" color="#2B2E36" to="/about">{{about}}</v-btn>
+      </v-col>
+      <v-col class="right-col" cols="4">
+        <img width="100%"
+          src="~/assets/images/person.png"
+        >
+      </v-col>
   </v-row>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+
+  data () {
+    return {
+      tagline: 'Only Get Offers You Love. Guaranteed.',
+      description: 'Make Me Quit is a no-search employment platform that allows you to passively receive great opportunities tailored to you. Create a profile in less than 5 minutes, name your price, and only get notified for offers that meet or exceed your standard. No spam. No headache. Welcome to the passive dream-job search.',
+      join: 'Join Beta',
+      about: 'About Us',
+    }
+  }
 }
 </script>
+
+<style scoped>
+@import '~/assets/style.css';
+
+.join-button {
+  margin-top: 3%;
+  margin-right: 1%;
+}
+
+.nav-button {
+  margin-top: 3%;
+  width: 150px;
+  color: #eaeaea;
+}
+
+</style>
