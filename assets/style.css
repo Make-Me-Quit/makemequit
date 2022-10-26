@@ -1,5 +1,6 @@
 .v-toolbar__title {
-    margin-left: 6%;
+    /* margin-left: 6%; */
+    margin-right: 1%;
     font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: 700;

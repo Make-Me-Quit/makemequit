@@ -4,12 +4,12 @@
       fixed
       app
     >
-      <v-toolbar-title class="v-toolbar__title" v-if="!isMobile">{{ title }}</v-toolbar-title>
-      <img v-if="isMobile"
-        src="~/assets/images/icon.png"
+      <img
+        src="~/assets/images/logo.png"
         width="45px"
-        :style="{'margin-right': '10%'}"
+        :style="{'margin-right': isMobile ? '10%' : '1%', 'margin-left': isMobile ? null : '5.5%'}"
       />
+      <v-toolbar-title class="v-toolbar__title" v-if="!isMobile">{{ title }}</v-toolbar-title>
       <v-spacer />
       <v-btn class="nav-button" elevation="0" to="/">{{home}}</v-btn>
       <v-btn class="nav-button" elevation="0" to="/about">{{about}}</v-btn>
