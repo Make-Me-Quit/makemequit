@@ -35,18 +35,27 @@
     line-height: 25px;
 }
 
-.row {
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 2%;
+.engineer-join-button {
+    width: 200px;
+    color: #111111;
+    border-radius: 6px;
+    /* font-family: 'Lexend Deca'; */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 25px;
 }
 
-.left-col {
-    /* width: 60%; */
-}
-
-.right-col {
-    /* width: 40%; */
+.recruiter-join-button {
+    width: 200px;
+    color: #96FBC4;
+    border-radius: 6px;
+    border: thin solid #96FBC4;
+    /* font-family: 'Lexend Deca'; */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 25px;
 }
 
 .tagline {
@@ -69,4 +78,110 @@
     font-size: 20px;
     line-height: 150%;
     color: #eaeaea;
+}
+
+.main-div {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2%;
+}
+
+.card-row {
+    margin-top: 5%;
+}
+
+.feature-card {
+    background-color: #2B2E36;
+    margin-right: 5%;
+}
+
+.card-title {
+    justify-content: center;
+}
+
+.card-text {
+    white-space: pre-wrap;
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #ffffff;
+}
+
+.quote-row {
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+
+.whole-quote {
+    justify-content: center;
+}
+
+.open-quote {
+    vertical-align: top;
+    max-width: 80px;
+    max-height: 57px;
+    height: auto;
+    width: auto;
+}
+
+.close-quote {
+    vertical-align: bottom;
+    max-width: 80px;
+    max-height: 57px;
+    height: auto;
+    width: auto;
+}
+
+.quote {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: inline-block;
+    width: 60%;
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    color: #eaeaea;
+}
+
+.signup-row {
+    margin-bottom: 5%;
+}
+
+.signup-card {
+    margin-bottom: 20px;
+    width: 350px;
+    background: #2B2E36;
+    opacity: 0.6;
+    border-radius: 6px;
+    margin-right: 5%;
+}
+
+.signup-card-content {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.signup-title {
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.signup-text {
+    white-space: pre-wrap;
+    display: inline-block;
+    width: 200px;
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
 }
