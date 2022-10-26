@@ -1,11 +1,17 @@
 <template>
   <div class="main-div">
+
+    <!-- Tagline, description, buttons -->
     <v-row>
       <v-col align-self="" class="left-col" cols="8">
         <p class="tagline">{{tagline}}</p>
         <p class="description">{{description}}</p>
-        <v-btn class="join-button" color="#96FBC4" to="/join">{{join}}</v-btn>
+        <div class="btn-row">
+        <a class="js-scroll-trigger" href="#signup">
+          <v-btn class="join-button" color="#96FBC4">{{join}}</v-btn>
+        </a>
         <v-btn class="nav-button" color="#2B2E36" to="/about">{{about}}</v-btn>
+        </div>
       </v-col>
       <v-col class="right-col" cols="4">
         <img width="100%"
@@ -14,6 +20,7 @@
       </v-col>
     </v-row>
 
+    <!-- Feature cards -->
     <v-row class="card-row text-center" justify="center">
       <v-card class="feature-card" width="200px">
         <v-card-title class="card-title">
@@ -37,6 +44,7 @@
       </v-card>
     </v-row>
 
+    <!-- Quote -->
     <v-row class="quote-row" justify="center">
       <p class="whole-quote text-center">
         <img class="open-quote" src="~/assets/images/open-quote.png" />
@@ -45,7 +53,8 @@
       </p>
     </v-row>
 
-    <v-row class=" signup-row text-center" justify="center">
+    <!-- Signup cards -->
+    <v-row class=" signup-row text-center" id="signup" justify="center">
       <v-card class="signup-card">
         <div class="signup-card-content">
           <p class="signup-title">Candidate Sign-Up</p>
@@ -98,13 +107,16 @@ export default {
 <style scoped>
 @import '~/assets/style.css';
 
+.btn-row {
+  margin-top: 5%;
+}
+
 .join-button {
-  margin-top: 3%;
   margin-right: 1%;
+  color: #111111;
 }
 
 .nav-button {
-  margin-top: 3%;
   width: 150px;
 }
 
@@ -137,7 +149,8 @@ export default {
 }
 
 .card-row {
-    margin-top: 5%;
+    margin-top: 6%;
+    margin-bottom: 6%;
 }
 
 .feature-card {
@@ -154,7 +167,7 @@ export default {
     font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 150%;
     color: #ffffff;
 }
@@ -192,7 +205,7 @@ export default {
     font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 26px;
     line-height: 150%;
     color: #eaeaea;
 }
@@ -202,6 +215,9 @@ export default {
 }
 
 .signup-card {
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(134.94deg, #96FBC4 4.82%, #ACFCB2 29.27%, #C5FBA0 56.61%, #DEF991 70.28%, #F9F586 78.15%) 1;
     margin-bottom: 20px;
     width: 350px;
     background: #2B2E36;

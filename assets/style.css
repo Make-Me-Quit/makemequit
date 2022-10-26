@@ -1,4 +1,4 @@
-.title {
+.v-toolbar__title {
     margin-left: 6%;
     margin-right: 10%;
     font-family: 'Lexend Deca';
@@ -35,7 +35,7 @@
 }
 
 .engineer-join-button {
-    width: 200px;
+    width: 250px;
     color: #111111;
     border-radius: 6px;
     font-family: 'Lexend Deca';
@@ -46,7 +46,7 @@
 }
 
 .recruiter-join-button {
-    width: 200px;
+    width: 250px;
     color: #96FBC4;
     border-radius: 6px;
     border: thin solid #96FBC4;

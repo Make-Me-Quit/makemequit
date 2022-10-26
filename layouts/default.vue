@@ -5,11 +5,13 @@
       fixed
       app
     >
-      <v-toolbar-title class="title">{{ title }}</v-toolbar-title>
+      <v-toolbar-title class="v-toolbar__title">{{ title }}</v-toolbar-title>
       <v-btn class="nav-button" elevation="0" to="/">{{home}}</v-btn>
       <v-btn class="nav-button" elevation="0" to="/about">{{about}}</v-btn>
       <v-spacer />
-      <v-btn class="join-button" color="#96FBC4" to="/join">{{join}}</v-btn>
+      <a class="js-scroll-trigger" href="/#signup">
+        <v-btn class="join-button" color="#96FBC4">{{join}}</v-btn>
+      </a>
     </v-app-bar>
     <v-main>
       <v-container>
@@ -59,5 +61,17 @@ export default {
 
 <style scoped>
 @import '~/assets/style.css';
+</style>
+
+<style>
+@import '~/assets/style.css';
+
+v-toolbar-title {
+  font-family: 'Lexend Deca';
+}
+
+v-app {
+  font-family: 'Lexend Deca', sans-serif;
+}
 
 </style>
