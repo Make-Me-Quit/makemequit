@@ -167,7 +167,7 @@ export default {
         },
         {
           src: 'handshake.png',
-          description: 'Total anonymity until you accept an offer.\nTeam #quietquit',
+          description: 'Total anonymity until you accept an invitation to interview.',
         }
       ],
       filter: 'Customize your criteria for offers you really, really want.\nNo. More. Spam.',
