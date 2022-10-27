@@ -316,8 +316,8 @@ export default {
     border-image: linear-gradient(134.94deg, #96FBC4 4.82%, #ACFCB2 29.27%, #C5FBA0 56.61%, #DEF991 70.28%, #F9F586 78.15%) 1;
     margin-bottom: 20px;
     width: 350px;
-    background: #2B2E36;
-    opacity: 0.6;
+    background-color: #2B2E36;
+    /* opacity: 0.6; */
     border-radius: 6px;
     margin-right: 5%;
 }
@@ -333,7 +333,7 @@ export default {
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .signup-text {

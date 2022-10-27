@@ -32,6 +32,8 @@
       app
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
+      <v-spacer />
+      <span class="contact">{{contact}}</span>
     </v-footer>
   </v-app>
 </template>
@@ -62,7 +64,8 @@ export default {
       title: 'Make Me Quit',
       home: 'Home',
       about: 'About',
-      join: 'Join Beta'
+      join: 'Join Beta',
+      contact: 'Contact us - makemequitteam@gmail.com',
     }
   },
 
@@ -78,6 +81,11 @@ export default {
 
 <style scoped>
 @import '~/assets/style.css';
+
+.contact {
+  font-size: 12px;
+}
+
 </style>
 
 <style>
