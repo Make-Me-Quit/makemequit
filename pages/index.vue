@@ -172,7 +172,7 @@ export default {
       ],
       filter: 'Customize your criteria for offers you really, really want.\nNo. More. Spam.',
       offers: 'Get job offers that fit your criteria and move you forward - without actively looking.',
-      anon: 'Total anonymity until you accept an offer.\nTeam #quietquit',
+      anon: 'Total anonymity until you decide accept an invitation to interview.',
       quote: 'Awesome jobs don\'t come along every day. We\'re here to help you be ready when opportunity knocks.',
       candidate: 'Set your criteria, remain anonymous, get offers\n\n',
       recruiter: 'Get access to the best developers and see their price up front',
