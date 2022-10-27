@@ -110,7 +110,7 @@
         <div class="signup-card-content">
           <p class="signup-title">Candidate Sign-Up</p>
           <p class="signup-text">{{candidate}}</p>
-          <v-btn class="engineer-join-button" color="#96FBC4" to="/join">{{candidateJoin}}</v-btn>
+          <v-btn class="engineer-join-button" color="#96FBC4" @click="launchCandidateSurvey()">{{candidateJoin}}</v-btn>
         </div>
       </v-card>
 
@@ -118,7 +118,7 @@
         <div class="signup-card-content">
           <p class="signup-title">Recruiter Sign-Up</p>
           <p class="signup-text">{{recruiter}}</p>
-          <v-btn outlines class="recruiter-join-button" to="/join">{{recruiterJoin}}</v-btn>
+          <v-btn outlines class="recruiter-join-button" @click="launchRecruiterSurvey()">{{recruiterJoin}}</v-btn>
         </div>
       </v-card>
     </v-row>
@@ -130,7 +130,7 @@
           <div class="signup-card-content">
             <p class="signup-title">Candidate Sign-Up</p>
             <p class="signup-text">{{candidate}}</p>
-            <v-btn class="engineer-join-button" color="#96FBC4" to="/join">{{candidateJoin}}</v-btn>
+            <v-btn class="engineer-join-button" color="#96FBC4" @click="launchCandidateSurvey()">{{candidateJoin}}</v-btn>
           </div>
         </v-card>
 
@@ -138,7 +138,7 @@
           <div class="signup-card-content">
             <p class="signup-title">Recruiter Sign-Up</p>
             <p class="signup-text">{{recruiter}}</p>
-            <v-btn outlines class="recruiter-join-button" to="/join">{{recruiterJoin}}</v-btn>
+            <v-btn outlines class="recruiter-join-button" @click="launchRecruiterSurvey()">{{recruiterJoin}}</v-btn>
           </div>
         </v-card>
       </v-col>
@@ -178,6 +178,16 @@ export default {
       recruiter: 'Get access to the best developers and see their price up front',
       candidateJoin: 'Join Engineer Beta',
       recruiterJoin: 'Join Recruiter Beta',
+    }
+  },
+
+  methods: {
+    async launchCandidateSurvey() {
+      await open('https://qfreeaccountssjc1.az1.qualtrics.com/jfe/form/SV_6RIHUG9yhj9HPlY')
+    },
+
+    async launchRecruiterSurvey() {
+      await open('https://forms.gle/mikpYKPUpCnPoT4E9')
     }
   },
 
