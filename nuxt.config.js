@@ -9,7 +9,7 @@ export default {
 
   // Google Analytics config
   googleAnalytics: {
-    id: 'G-6H8LGG4D7G',
+    id: 'UA-247443624-1',
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
