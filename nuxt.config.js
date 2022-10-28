@@ -7,11 +7,6 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
-  // Google Analytics config
-  googleAnalytics: {
-    id: 'UA-247443624-1',
-  },
-
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '',
@@ -46,7 +41,6 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    '@nuxtjs/google-analytics',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
