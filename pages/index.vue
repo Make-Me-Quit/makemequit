@@ -265,7 +265,7 @@ export default {
     font-weight: 400;
     font-size: 15px;
     line-height: 150%;
-    color: #ffffff;
+    color: #eaeaea;
 }
 
 .quote-row {
@@ -333,7 +333,7 @@ export default {
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
-    color: #ffffff;
+    color: #eaeaea;
 }
 
 .signup-text {
@@ -345,7 +345,7 @@ export default {
     font-weight: 200;
     font-size: 16px;
     line-height: 150%;
-    color: #FFFFFF;
+    color: #eaeaea;
 }
 
 </style>

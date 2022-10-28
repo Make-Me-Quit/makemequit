@@ -28,12 +28,12 @@
       </v-container>
     </v-main>
     <v-footer
-      :absolute="!fixed"
+      absolute
       app
     >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span class="footer">&copy; {{ new Date().getFullYear() }}</span>
       <v-spacer />
-      <span class="contact">{{contact}}</span>
+      <span class="footer">{{contact}}</span>
     </v-footer>
   </v-app>
 </template>
@@ -43,9 +43,6 @@ export default {
   name: 'DefaultLayout',
   data () {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
       items: [
         {
           icon: 'mdi-apps',
@@ -58,9 +55,6 @@ export default {
           to: '/inspire'
         }
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
       title: 'Make Me Quit',
       home: 'Home',
       about: 'About',
@@ -82,8 +76,8 @@ export default {
 <style scoped>
 @import '~/assets/style.css';
 
-.contact {
-  font-size: 12px;
+.footer {
+  font-size: 13px;
 }
 
 </style>
