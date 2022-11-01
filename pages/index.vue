@@ -153,7 +153,7 @@ export default {
   data () {
     return {
       tagline: 'Only Get Offers You Love. Guaranteed.',
-      description: 'Make Me Quit is a no-search employment platform that allows you to passively receive great opportunities tailored to you. Create a profile in less than 5 minutes, name your price, and only get notified for offers that meet or exceed your standard. No spam. No headache. Welcome to the passive dream-job search.',
+      description: 'Make Me Quit is a no-search employment platform for Software Engineers that allows you to passively receive great opportunities tailored to you. Create a profile in less than 5 minutes, name your price, and only get notified for offers that meet or exceed your standard. No spam. No headache. Welcome to the passive dream-job search.',
       join: 'Join Beta',
       about: 'About',
       featureCards: [
