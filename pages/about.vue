@@ -1,11 +1,11 @@
 <template>
   <v-col class="text-center">
-    <h2 class="text">Meet our team!</h2>
+    <h2>Meet our team!</h2>
     <v-row class="picture-row text-center" justify="center" align="center">
       <v-col v-for="(person, i) in team" :key="i">
         <img class="team-img"
           :src="require(`~/assets/images/${person.img}.jpg`)"
-          :style="{'width': isMobile ? '100px': null}"
+          :style="{'width': isMobile ? '150px': null, 'font-size': isMobile ? '14px' : null}"
         />
         <v-spacer />
         <span class="text">{{person.name}}</span>
@@ -67,13 +67,22 @@ export default {
   margin-top: 20px;
 }
 
+h2 {
+  font-family: 'Lexend Deca';
+  color: #eaeaea;
+}
+
 .team-img {
   border-radius: 50%;
   width: 200px;
   /* margin: 10px 10px; */
 }
+
+
+
 .text {
   font-family: 'Lexend Deca';
+  /* font-size: 16px; */
   color: #eaeaea;
 }
 
