@@ -2,17 +2,30 @@
   <v-col class="text-center">
     <h2>Meet our team!</h2>
     <v-row class="picture-row text-center" justify="center" align="center">
-      <v-col v-for="(person, i) in team" :key="i">
+      <v-card class="team-card"
+        v-for="(person, i) in team" :key="i"
+        width="200px"
+      >
+        <div class="team-card-content">
+          <img class="team-img" :src="require(`~/assets/images/${person.imgBlob}`)" />
+          <v-spacer />
+          <span class="name-text">{{person.name}}</span>
+          <v-spacer />
+          <span class="role-text">{{person.role}}</span>
+        </div>
+      </v-card>
+      <!-- <v-col v-for="(person, i) in team" :key="i">
         <img class="team-img"
-          :src="require(`~/assets/images/${person.img}.jpg`)"
+          :src="require(`~/assets/images/${person.img}`)"
           :style="{'width': isMobile ? '150px': null, 'font-size': isMobile ? '14px' : null}"
         />
         <v-spacer />
         <span class="text">{{person.name}}</span>
         <v-spacer />
         <span class="text">{{person.role}}</span>
-      </v-col>
+      </v-col> -->
     </v-row>
+    
   </v-col>
 </template>
 
@@ -25,22 +38,26 @@ export default {
       team: [
         {
           name: 'Jack Morgan',
-          img: 'jack',
+          img: 'jack.jpg',
+          imgBlob: 'jack-blob.png',
           role: 'Product Manager',
         },
         {
           name: 'Andrew Thibaudeau',
-          img: 'andrew',
+          img: 'andrew.jpg',
+          imgBlob: 'andrew-blob.png',
           role: 'Software Engineer',
         },
         {
           name: 'Travis Reynertson',
-          img: 'travis',
+          img: 'travis.jpg',
+          imgBlob: 'travis-blob.png',
           role: 'Software Engineer',
         },
         {
           name: 'Wyatt Thacker',
-          img: 'wyatt',
+          img: 'wyatt.jpg',
+          imgBlob: 'wyatt-blob.png',
           role: 'UX Designer',
         }
       ]
@@ -72,17 +89,37 @@ h2 {
   color: #eaeaea;
 }
 
-.team-img {
-  border-radius: 50%;
-  width: 200px;
-  /* margin: 10px 10px; */
+.team-card {
+  background-color: #2B2E36;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
+.team-card-content {
+  margin: 20px 0px;
+}
 
+.team-img {
+  /* border-radius: 50%; */
+  width: 150px;
+}
 
-.text {
+.name-text {
   font-family: 'Lexend Deca';
-  /* font-size: 16px; */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px; /* 16px */
+  line-height: 150%;
+  text-align: center;
+  color: #eaeaea;
+}
+
+.role-text {
+  font-family: 'Lexend Deca';
+  font-style: normal;
+  /* font-weight: 600; */
+  font-size: 15px;
+  line-height: 150%;
   color: #eaeaea;
 }
 
