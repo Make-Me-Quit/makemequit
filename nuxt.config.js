@@ -49,7 +49,12 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    'nuxt-appwrite',
   ],
+  appwrite: {
+    endpoint: 'http://localhost/v1',
+    project: '6362b03a7f311a35eb7b',
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -85,5 +90,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  
 }
