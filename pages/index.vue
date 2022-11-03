@@ -162,7 +162,7 @@ export default {
           description: 'Customize your criteria for offers you really, really want.\nNo. More. Spam.',
         },
         {
-          src: 'dollar.png',
+          src: 'money.png',
           description: 'Get job offers that fit your criteria and move you forward - without actively looking.',
         },
         {
