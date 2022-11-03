@@ -4,21 +4,20 @@
       fixed
       app
     >
-      <img v-if="isMobile"
+      <!-- <img v-if="isMobile"
         src="~/assets/images/logo.png"
         width="45px"
         :style="{'margin-right': '10%'}"
-      />
-      <!-- <v-toolbar-title class="v-toolbar__title" v-if="!isMobile">{{ title }}</v-toolbar-title> -->
-      <img v-if="!isMobile"
-        src="~/assets/images/full-logo.png"
-        width="250px"
-        :style="{'margin-left': '6%'}"
-      />
+      /> -->
+      <v-toolbar-title class="v-toolbar__title"
+        :style="{'margin-left': isMobile ? '1%' : '5.5%'}"
+      >
+        {{ title }}
+      </v-toolbar-title>
       <v-spacer />
-      <v-btn class="nav-button" elevation="0" to="/">{{home}}</v-btn>
-      <v-btn class="nav-button" elevation="0" to="/about">{{about}}</v-btn>
-      <a class="join-button js-scroll-trigger" href="/#signup">
+      <v-btn class="nav-button" elevation="0" to="/" v-if="!isMobile">{{home}}</v-btn>
+      <v-btn class="nav-button" elevation="0" to="/about" v-if="!isMobile">{{about}}</v-btn>
+      <a class="join-button js-scroll-trigger" href="/#signup" v-if="!isMobile">
         <v-btn class="join-button"
           color="#96FBC4"
           :style="{'width': isMobile ? '120px' : null, 'margin-right': isMobile ? '4%' : null}"
@@ -26,6 +25,42 @@
           {{join}}
         </v-btn>
       </a>
+      <v-menu v-if="isMobile"
+        bottom
+        origin="center center"
+        :close-on-click="true"
+        transition="scale-transition"
+        :offset-y="true"
+        open-on-hover
+        :close-on-content-click="true"
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon>mdi-menu</v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item>
+            <v-btn class="nav-button" elevation="0" to="/">{{home}}</v-btn>
+          </v-list-item>
+          <v-list-item>
+            <v-btn class="nav-button" elevation="0" to="/about">{{about}}</v-btn>
+          </v-list-item>
+          <v-list-item>
+            <a class="join-button js-scroll-trigger" href="/#signup">
+              <v-btn class="join-button"
+                color="#96FBC4"
+                :style="{'width': isMobile ? '120px' : null, 'margin-right': isMobile ? '4%' : null}"
+              >
+                {{join}}
+              </v-btn>
+            </a>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-app-bar>
     <v-main>
       <v-container>
