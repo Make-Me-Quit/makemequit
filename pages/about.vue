@@ -1,6 +1,6 @@
 <template>
   <v-col class="text-center">
-    <h2>Meet our team!</h2>
+    <p class="about-header">Our Team</p>
     <v-row class="picture-row text-center" justify="center" align="center">
       <v-card class="team-card"
         v-for="(person, i) in team" :key="i"
@@ -25,7 +25,33 @@
         <span class="text">{{person.role}}</span>
       </v-col> -->
     </v-row>
-    
+
+    <!-- Background, Product Description -->
+    <v-row class="background-row" justify="center"
+      :style="{'margin-top': isMobile ? '15%' : null, 'margin-bottom': isMobile ? '12%' : null}"
+    >
+      <p>
+        <img class="handshake-lg"
+          src="~/assets/images/handshake-lg.png"
+          :style="{'max-width': isMobile ? '50px' : null}"
+        />
+        <span class="background"
+          :style="{'font-size': isMobile ? '18px' : null, 'margin-left': isMobile ? '10px' : null, 'margin-right': isMobile ? '10px' : null, 'width': isMobile ? '65%' : null}"
+        >
+          <span :style="{'text-decoration': 'underline', 'font-size': isMobile ? '22px' : '26px'}">Background</span>
+          <v-spacer />
+          {{background}}
+          <br><br>
+          <span :style="{'text-decoration': 'underline', 'font-size': isMobile ? '22px' : '26px'}">Our Product</span>
+          <v-spacer />
+          {{product}}
+        </span>
+        <img class="dollar"
+          src="~/assets/images/dollar.png"
+          :style="{'max-width': isMobile ? '50px' : null}"
+        />
+      </p>
+    </v-row>
   </v-col>
 </template>
 
@@ -60,7 +86,9 @@ export default {
           imgBlob: 'wyatt-blob.png',
           role: 'UX Designer',
         }
-      ]
+      ],
+      background: 'We are all students at BYU in the Sandbox 02 Program, a startup incubator sponsored by the Rollins Center. We spent weeks speaking to software engineers and recruiters as we searched for a way to improve the hiring experience for those with experience.',
+      product: 'It\'s pretty obvious that the hiring process is messy. Recruiters spam employees, employees get messages they\'re not interested in, and the circle continues. We wanted to empower employees to receive only offers that might be interesting to them, which led to our product - Make Me Quit!',
     }
   },
 
@@ -80,13 +108,24 @@ export default {
 <style scoped>
 @import '~/assets/style.css';
 
-.picture-row {
-  margin-top: 20px;
+.about-header {
+  margin-top: 10px;
+  font-family: 'Lexend Deca';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 65px;
+  line-height: 150%;
+  /* identical to box height */
+  text-align: center;
+  background: linear-gradient(134.94deg, #96FBC4 4.82%, #ACFCB2 29.27%, #C5FBA0 56.61%, #DEF991 70.28%, #F9F586 78.15%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* text-fill-color: transparent; */
 }
 
-h2 {
-  font-family: 'Lexend Deca';
-  color: #eaeaea;
+.picture-row {
+  margin-top: 40px;
 }
 
 .team-card {
@@ -108,7 +147,7 @@ h2 {
   font-family: 'Lexend Deca';
   font-style: normal;
   font-weight: 600;
-  font-size: 16px; /* 16px */
+  font-size: 16px;
   line-height: 150%;
   text-align: center;
   color: #eaeaea;
@@ -121,6 +160,41 @@ h2 {
   font-size: 15px;
   line-height: 150%;
   color: #eaeaea;
+}
+
+.background-row {
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+
+.handshake-lg {
+    vertical-align: top;
+    max-width: 120px;
+    /* max-height: 57px; */
+    height: auto;
+    width: auto;
+}
+
+.dollar {
+    vertical-align: bottom;
+    max-width: 120px;
+    /* max-height: 57px; */
+    height: auto;
+    width: auto;
+}
+
+.background {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: inline-block;
+    text-align: left;
+    width: 60%;
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: #eaeaea;
 }
 
 </style>
