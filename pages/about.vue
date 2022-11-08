@@ -135,18 +135,6 @@ export default {
   },
 
   methods : {
-    // async sendEmail() {
-    //   try {
-    //     await emailjs.send('mmq_gmail_service', 'contact_form', {
-    //       from_name: this.name,
-    //       from_email: this.email,
-    //       message: this.message,
-    //     },
-    //     'rWfLyPQyBNY3WqQSS')
-    //   } catch (error) {
-    //     console.log('Failed...', error)
-    //   }
-    // }
   },
 
   computed: {
