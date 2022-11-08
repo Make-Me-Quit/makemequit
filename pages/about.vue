@@ -1,29 +1,20 @@
 <template>
   <v-col class="text-center">
-    <p class="about-header">Our Team</p>
+    <span class="about-header">Our Team</span>
+    <!-- Team pictures -->
     <v-row class="picture-row text-center" justify="center" align="center">
       <v-card class="team-card"
         v-for="(person, i) in team" :key="i"
         width="200px"
       >
         <div class="team-card-content">
-          <img class="team-img" :src="require(`~/assets/images/${person.imgBlob}`)" />
+          <img class="team-img" :src="require(`~/assets/images/${person.imgBlob}`)" width="150px" />
           <v-spacer />
           <span class="name-text">{{person.name}}</span>
           <v-spacer />
           <span class="role-text">{{person.role}}</span>
         </div>
       </v-card>
-      <!-- <v-col v-for="(person, i) in team" :key="i">
-        <img class="team-img"
-          :src="require(`~/assets/images/${person.img}`)"
-          :style="{'width': isMobile ? '150px': null, 'font-size': isMobile ? '14px' : null}"
-        />
-        <v-spacer />
-        <span class="text">{{person.name}}</span>
-        <v-spacer />
-        <span class="text">{{person.role}}</span>
-      </v-col> -->
     </v-row>
 
     <!-- Background, Product Description -->
@@ -52,12 +43,59 @@
         />
       </p>
     </v-row>
+
+    <!-- Reach out -->
+    <span class="about-header">Reach Out!</span>
+    <v-spacer />
+    <div class="reach-out-text">
+      <span>{{reachOut}}</span>
+    </div>
+    <!-- Form -->
+    <v-row justify="center">
+      <v-card class="form-card">
+        <!-- <div class="form-content"
+          :style="{'margin': isMobile ? '30px 20px' : null}"
+        > -->
+        <form class="form-content"
+          action="https://submit-form.com/5zSoLWvH"
+          :style="{'margin': isMobile ? '30px 20px' : null}"
+        >
+          <input type="hidden" name="_redirect" value="https://makemequit.dev/about" />
+          <v-row>
+            <input type="text" class="text-field" v-model="name" name="name" placeholder="Name" required>
+            <input type="email" class="text-field" v-model="email" name="email" placeholder="Email" required>
+          </v-row>
+          <textarea type="text"
+            class="text-area"
+            v-model="message"
+            name="message"
+            rows="5"
+            placeholder="Your message here..."
+            required
+          ></textarea>
+          <v-btn
+            class="send-btn"
+            type="submit"
+          >
+            Send
+            <v-icon right>mdi-send</v-icon>
+          </v-btn>
+        </form>
+        <!-- </div> -->
+      </v-card>
+    </v-row>
   </v-col>
 </template>
 
 <script>
 export default {
   name: 'AboutPage',
+
+  mounted () {
+    if (this.$route.params.email != undefined) {
+      alert('Thank you for your submission! We will get back to you as soon as we can.')
+    }
+  },
 
   data () {
     return {
@@ -89,10 +127,26 @@ export default {
       ],
       background: 'We are all students at BYU in the Sandbox 02 Program, a startup incubator sponsored by the Rollins Center. We spent weeks speaking to software engineers and recruiters as we searched for a way to improve the hiring experience for those with experience.',
       product: 'It\'s pretty obvious that the hiring process is messy. Recruiters spam employees, employees get messages they\'re not interested in, and the circle continues. We wanted to empower employees to receive only offers that might be interesting to them, which led to our product - Make Me Quit!',
+      reachOut: 'We would love to hear from you! Feel free to share suggestions, feedback, and excitement.',
+      name: '',
+      email: '',
+      message: '',
     }
   },
 
   methods : {
+    // async sendEmail() {
+    //   try {
+    //     await emailjs.send('mmq_gmail_service', 'contact_form', {
+    //       from_name: this.name,
+    //       from_email: this.email,
+    //       message: this.message,
+    //     },
+    //     'rWfLyPQyBNY3WqQSS')
+    //   } catch (error) {
+    //     console.log('Failed...', error)
+    //   }
+    // }
   },
 
   computed: {
@@ -109,7 +163,7 @@ export default {
 @import '~/assets/style.css';
 
 .about-header {
-  margin-top: 10px;
+  /* margin-top: 10px; */
   font-family: 'Lexend Deca';
   font-style: normal;
   font-weight: 400;
@@ -125,7 +179,7 @@ export default {
 }
 
 .picture-row {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .team-card {
@@ -136,11 +190,6 @@ export default {
 
 .team-card-content {
   margin: 20px 0px;
-}
-
-.team-img {
-  /* border-radius: 50%; */
-  width: 150px;
 }
 
 .name-text {
@@ -163,8 +212,8 @@ export default {
 }
 
 .background-row {
-    margin-top: 8%;
-    margin-bottom: 8%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .handshake-lg {
@@ -195,6 +244,63 @@ export default {
     font-size: 20px;
     line-height: 150%;
     color: #eaeaea;
+}
+
+.reach-out-text {
+  width: 325px;
+  display: inline-block;
+  font-family: 'Lexend Deca';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  color: #eaeaea;
+}
+
+.form-card {
+  margin: 50px 0px;
+  justify-content: center;
+  background: #2B2E36;
+  border-radius: 6px;
+  width: 700px;
+}
+
+.form-content {
+  margin: 30px 50px;
+  display: grid;
+}
+
+.text-field {
+  width: 46%;
+  margin: 2%;
+  padding: 6px 6px;
+  background-color: #fcfcfc !important;
+  border-style: solid;
+  border-width: 3px;
+  border-image: linear-gradient(134.94deg, #96FBC4 4.82%, #ACFCB2 29.27%, #C5FBA0 56.61%, #DEF991 70.28%, #F9F586 78.15%) 1;
+}
+
+.text-area {
+  border-style: solid;
+  border-width: 3px;
+  border-image: linear-gradient(134.94deg, #96FBC4 4.82%, #ACFCB2 29.27%, #C5FBA0 56.61%, #DEF991 70.28%, #F9F586 78.15%) 1;
+  background-color: #fcfcfc !important;
+  margin: 10px 0px;
+  padding: 6px 6px;
+}
+
+.send-btn {
+  justify-self: end;
+  background-color: #96FBC4 !important;
+  border-radius: 6px;
+  width: 150px;
+  font-family: 'Lexend Deca';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000000;
 }
 
 </style>
