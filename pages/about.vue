@@ -53,11 +53,11 @@
     <!-- Form -->
     <v-row justify="center">
       <v-card class="form-card">
-        <!-- <div class="form-content"
+        <div class="form-content"
           :style="{'margin': isMobile ? '30px 20px' : null}"
-        > -->
+        >
         <form class="form-content"
-          action="https://submit-form.com/5zSoLWvH"
+          :action="'https://submit-form.com/5zSoLWvH'"
           :style="{'margin': isMobile ? '30px 20px' : null}"
         >
           <input type="hidden" name="_redirect" value="https://makemequit.dev/about" />
@@ -81,7 +81,7 @@
             <v-icon right>mdi-send</v-icon>
           </v-btn>
         </form>
-        <!-- </div> -->
+        </div>
       </v-card>
     </v-row>
   </v-col>
@@ -92,8 +92,9 @@ export default {
   name: 'AboutPage',
 
   mounted () {
-    if (this.$route.params.email != undefined) {
+    if (this.$route.query.email != undefined) {
       alert('Thank you for your submission! We will get back to you as soon as we can.')
+      this.$router.push('/about')
     }
   },
 
