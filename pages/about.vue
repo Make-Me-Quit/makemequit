@@ -87,8 +87,8 @@ export default {
           role: 'UX Designer',
         }
       ],
-      background: 'We are all students at BYU in the Sandbox 02 Program, a startup incubator sponsored by the Rollins Center. We spent weeks speaking to software engineers and recruiters as we searched for a way to improve the hiring experience for those with experience.',
-      product: 'It\'s pretty obvious that the hiring process is messy. Recruiters spam employees, employees get messages they\'re not interested in, and the circle continues. We wanted to empower employees to receive only offers that might be interesting to them, which led to our product - Make Me Quit!',
+      background: 'Our team members are all students at BYU in the Sandbox 02 Program, a startup incubator sponsored by the Rollins Center. We spent weeks speaking to software engineers and recruiters as we searched for a way to improve the hiring experience.',
+      product: 'The hiring process is messy. Recruiters frequently contact software engineers. However, most engineers already receive an overwhelming number of messages, which causes them to not give the recruiters the attention they deserve. This means recruiters have a low response rate and engineers miss valuable opportunities. We wanted to empower software engineers to only receive offers that would be interesting to them, which led to our product - Make Me Quit!',
     }
   },
 
