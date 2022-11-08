@@ -67,13 +67,13 @@
         <Nuxt />
       </v-container>
     </v-main>
-    <v-footer
+    <v-footer class="footer"
       absolute
       app
     >
-      <span class="footer">&copy; {{ new Date().getFullYear() }}</span>
+      <span class="footer-text">&copy; {{ new Date().getFullYear() }}</span>
       <v-spacer />
-      <span class="footer">{{contact}}</span>
+      <span class="footer-text"><a target="_blank" href="mailto:makemequitteam@gmail.com">Contact Us</a></span>
     </v-footer>
   </v-app>
 </template>
@@ -99,7 +99,7 @@ export default {
       home: 'Home',
       about: 'About',
       join: 'Join Beta',
-      contact: 'Contact us - makemequitteam@gmail.com',
+      contact: 'Contact us - ',
     }
   },
 
@@ -116,7 +116,7 @@ export default {
 <style scoped>
 @import '~/assets/style.css';
 
-.footer {
+.footer-text {
   font-size: 13px;
 }
 

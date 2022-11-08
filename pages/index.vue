@@ -5,7 +5,11 @@
     <v-row v-if="!isMobile">
       <v-col align-self="" class="left-col" cols="8">
         <p class="tagline">{{tagline}}</p>
-        <p class="description">{{description}}</p>
+        <p class="description"
+          :style="{'font-size': windowWidth > 1400 ? '24px' : null}"
+        >
+          {{description}}
+        </p>
         <div class="btn-row">
         <a class="js-scroll-trigger" href="#signup">
           <v-btn class="join-button" color="#96FBC4">{{join}}</v-btn>
@@ -150,8 +154,13 @@
 export default {
   name: 'IndexPage',
 
+  created () {
+    window.addEventListener('resize', this.resizeHandler)
+  },
+
   data () {
     return {
+      windowWidth: window.innerWidth,
       tagline: 'Only Get Offers You Love. Guaranteed.',
       description: 'Make Me Quit is a no-search employment platform for Software Engineers that allows you to passively receive great opportunities tailored to you. Create a profile in less than 5 minutes, name your price, and only get notified for offers that meet or exceed your standard. No spam. No headache. Welcome to the passive dream-job search.',
       join: 'Join Beta',
@@ -188,6 +197,10 @@ export default {
 
     async launchRecruiterSurvey() {
       await open('https://forms.gle/mikpYKPUpCnPoT4E9')
+    },
+
+    resizeHandler() {
+      this.windowWidth = window.innerWidth
     }
   },
 
@@ -323,8 +336,7 @@ export default {
 }
 
 .signup-card-content {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px 0px;
 }
 
 .signup-title {
